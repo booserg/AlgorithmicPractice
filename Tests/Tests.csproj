@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Codility\Leader\Dominator.cs" />
+    <Compile Include="Codility\MaximumSliceProblem\MaxProfit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
