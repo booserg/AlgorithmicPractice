@@ -48,8 +48,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Codility\Leader\Dominator.cs" />
-    <Compile Include="Codility\MaximumSliceProblem\MaxProfit.cs" />
+    <Compile Include="Codility\Leader\DominatorTest.cs" />
+    <Compile Include="Codility\MaximumSliceProblem\MaxProfitTest.cs" />
+    <Compile Include="Hackerrank\GreedyAlgorithms\MinimumAbsoluteDifferenceTest.cs" />
+    <Compile Include="Hackerrank\Search\IceCreamParlorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

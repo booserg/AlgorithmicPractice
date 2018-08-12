@@ -5,7 +5,7 @@ using AlgorithmicPractice.Codility.Leader.Dominator;
 namespace Tests.Codility.Leader
 {
     [TestClass]
-    public class Dominator
+    public class DominatorTest
     {
         [TestMethod]
         public void TestMethod1()

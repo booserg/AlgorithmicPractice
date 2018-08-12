@@ -5,7 +5,7 @@ using AlgorithmicPractice.Codility.MaximumSliceProblem.MaxProfit;
 namespace Tests.Codility.MaximumSliceProblem
 {
     [TestClass]
-    public class MaxProfit
+    public class MaxProfitTest
     {
         [TestMethod]
         public void TestMethod1()
