@@ -8,13 +8,13 @@ namespace AlgorithmicPractice.Codility.Challenges.King
     {
 		public int solution(int N, int M, int[] X, int[] Y)
 		{
-			var xLower = FindLowerBound(0, N, X);
+			var xLower = FindBound(0, N, X, true, -1, false);
 
-			var xHigher = FindHigherBound(0, N, X);
+			var xHigher = FindBound(0, N, X, false, -1, false);
 
-			var yLower = FindLowerBound(0, M, Y);
+			var yLower = FindBound(0, M, Y, true, -1, false);
 
-			var yHigher = FindHigherBound(0, M, Y);
+			var yHigher = FindBound(0, M, Y, false, -1, false);
 
 			var xDelta = 0;
 			if (xLower > -1 && xHigher > -1)
@@ -27,9 +27,9 @@ namespace AlgorithmicPractice.Codility.Challenges.King
 			return xDelta + yDelta;
 		}
 
-		static public int FindLowerBound(int startCoord, int endCoord, int[] arr)
+		static public int FindBound(int startCoord, int endCoord, int[] arr, bool areGoingDown, int lastMedium, bool isSuccessful)
 		{
-			var medium = (int)(startCoord + (endCoord - startCoord + 1) / 2);
+			var medium = (int)(startCoord + (endCoord - startCoord + ((areGoingDown)?1:0)) / 2);
 
 			int lower = 0, higher = 0;
 			for(int i = 0; i < arr.Length; i++)
@@ -40,63 +40,61 @@ namespace AlgorithmicPractice.Codility.Challenges.King
 					higher++;
 			}
 
-			if ((endCoord - startCoord) <= 2)
+			if(lastMedium == medium)
 			{
-				if (lower != higher)
-					return -1;
-				else
+				if (lower == higher)
 					return medium;
+				else if (isSuccessful)
+					return lastMedium;
+				else
+					return -1;
 			}
 			else
 			{
-				if (lower == higher && (medium - startCoord) <= 1)
+				lastMedium = medium;
+				isSuccessful = lower == higher;
+
+				if (areGoingDown)
 				{
-					return medium;
-				}
-				else
-				{
-					if (lower >= higher)
-						return FindLowerBound(startCoord, medium, arr);
+					if(lower == higher)
+						return FindBound(startCoord, medium, arr, true, lastMedium, isSuccessful);
+					else if (lower > higher)
+						return FindBound(startCoord, medium, arr, true, lastMedium, isSuccessful);
 					else
-						return FindLowerBound(medium, endCoord, arr); ;
-				}
-			}
-		}
-
-		static public int FindHigherBound(int startCoord, int endCoord, int[] arr)
-		{
-			var medium = (int)(startCoord + (endCoord - startCoord + 1) / 2);
-
-			int lower = 0, higher = 0;
-			for (int i = 0; i < arr.Length; i++)
-			{
-				if (arr[i] < medium)
-					lower++;
-				else
-					higher++;
-			}
-
-			if ((endCoord - startCoord) <= 2)
-			{
-				if (lower != higher)
-					return -1;
-				else
-					return medium;
-			}
-			else
-			{
-				if (lower == higher && (endCoord - medium) <= 1)
-				{
-					return medium;
+						return FindBound(medium, endCoord, arr, true, lastMedium, isSuccessful);
 				}
 				else
 				{
-					if (lower > higher)
-						return FindHigherBound(startCoord, medium, arr);
+					if(higher == lower)
+						return FindBound(medium, endCoord, arr, false, lastMedium, isSuccessful);
+					else if (higher > lower)
+						return FindBound(medium, endCoord, arr, false, lastMedium, isSuccessful);
 					else
-						return FindHigherBound(medium, endCoord, arr);
+						return FindBound(startCoord, medium, arr, false, lastMedium, isSuccessful);
 				}
 			}
+
+			//if ((endCoord - startCoord) <= 2)
+			//{
+			//	if (lower != higher)
+			//		return -1;
+			//	else
+			//		return medium;
+			//}
+			//else
+			//{
+			//	if (lower == higher && isFound(startCoord, medium, endCoord) <= 1)//(medium - startCoord)
+			//	{
+			//		return medium;
+			//	}
+			//	else
+			//	{
+			//		if (approchSide(lower, higher))// lower >= higher
+			//			return FindBound(startCoord, medium, arr, approchSide, isFound);
+			//		else
+			//			return FindBound(medium, endCoord, arr, approchSide, isFound); ;
+			//	}
+			//}
 		}
 	}
 }
