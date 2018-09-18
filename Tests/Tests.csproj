@@ -56,6 +56,7 @@
     <Compile Include="Codility\MaximumSliceProblem\MaxProfitTest.cs" />
     <Compile Include="Codility\PrimeAndCompositeNumbers\CountFactorsTest.cs" />
     <Compile Include="Codility\SieveOfEratosthenes\CountNonDivisible.cs" />
+    <Compile Include="Fromsomewhere\Fibonacci\FibonacciTest.cs" />
     <Compile Include="Hackerrank\DynamicProgramming\MaxArraySumTest.cs" />
     <Compile Include="Hackerrank\GreedyAlgorithms\MinimumAbsoluteDifferenceTest.cs" />
     <Compile Include="Hackerrank\Search\IceCreamParlorTest.cs" />
