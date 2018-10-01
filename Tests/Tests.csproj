@@ -57,9 +57,16 @@
     <Compile Include="Codility\PrimeAndCompositeNumbers\CountFactorsTest.cs" />
     <Compile Include="Codility\SieveOfEratosthenes\CountNonDivisible.cs" />
     <Compile Include="Fromsomewhere\Fibonacci\FibonacciTest.cs" />
+    <Compile Include="Fromsomewhere\MidpointOfLinkedList\MidpointOfLinkedListTests.cs" />
     <Compile Include="Hackerrank\DynamicProgramming\MaxArraySumTest.cs" />
     <Compile Include="Hackerrank\GreedyAlgorithms\MinimumAbsoluteDifferenceTest.cs" />
     <Compile Include="Hackerrank\Search\IceCreamParlorTest.cs" />
+    <Compile Include="PlaynGO\TaskN1\TaskN1Tests.cs" />
+    <Compile Include="PlaynGO\TaskN2\TaskN2Tests.cs" />
+    <Compile Include="PlaynGO\TaskN3\TaskN3Tests.cs" />
+    <Compile Include="PlaynGO\TaskN4\TaskN4Tests.cs" />
+    <Compile Include="PlaynGO\TaskN5\TaskN5Tests.cs" />
+    <Compile Include="PlaynGO\TaskN6\TaskN6Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +78,7 @@
       <Name>AlgorithmicPractice</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
